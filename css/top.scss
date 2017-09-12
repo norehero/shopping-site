@@ -1,0 +1,634 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin fontsize($size: 24, $base: 10) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+$ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+$off_white : #f9f8f6;
+$dark_gray : #887f69;
+$light_gray : #e2ddd4;
+$gray : #b0b0b0;
+$dark_red : #9d1a2d;
+
+// basic config
+
+header{
+  background: $off_white;
+  margin-bottom: 0px;
+  
+  h1{
+      padding-top: 40px;
+      padding-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+     h1{
+      width: 100%;
+      text-align: center;
+      padding-top: 30px;
+      padding-left: 0px;
+    }
+
+    .sp_navi{
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+    .sp_menu_li{
+      display: none;
+      list-style: none;
+      position:absolute;
+      top: 88px;
+      left: 250px;
+      z-index: 100;
+      background-color: white;
+          li{
+          padding: 1px;
+          }
+      }
+    
+    .pc_navi{
+        display: none;
+    }
+    #sp_fb{
+        padding: 10px;
+    }
+    #sp_insta{
+        padding: 10px;
+    }
+    #sp_menu{
+        padding: 10px;
+    }
+  }
+  sp_navi {
+      display: none;
+  }
+  
+  @media (min-width: 768px) {
+      .sp_navi {
+          display: none;
+      }
+      .pc_navi{
+          display: flex;
+          justify-content: space-between;
+          padding-top: 70px;
+      }
+      #login{
+          padding: 10px;
+      }
+      #cart{
+          padding: 10px;
+      }
+      #mypage{
+          padding: 10px;
+      }
+      #guide{
+          padding: 10px;
+      }
+      #login{
+          padding: 10px;
+      }
+      #facebook{
+          padding: 5px;
+      }
+      #insta{
+          padding: 5px;
+      }
+  }
+}
+// header
+
+#sub_cover_img {
+    background-image: url(../images/top/ca_banner.jpg);
+    height: 280px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+// sub_cover
+
+#sidebar {
+    float: right;
+    margin-left: 0px;
+}
+
+#title_newitems, #title_popular, #title_guide {
+    padding: 20px 0px 20px 10px;
+    margin: 10px 25px 10px 0px;
+}
+
+#main {
+    background-color:$off_white;
+}
+
+#main .container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.items_imgs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    }
+
+.item_01, .item_02, .item_03, .item_04, .item_05, .item_06, .item_07, .item_08, .item_09, .item_10, .item_11, .item_12  {
+    background-color: white;
+    margin: 1px;
+    padding: 10px;
+    width: 30.1%;
+}
+
+#guide_contents {
+    display: flex;
+}
+
+#pagetop {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+#footer {
+    background-color: $off_white;
+    margin: 0px;
+    padding-bottom: 100px;
+    
+    hr {
+        width: 80%;
+        border-color: $dark_gray;
+    }
+
+    p {
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0px 30px 10px 30px;
+    }
+}
+
+#copy {
+    text-align: center;
+    color: $gray;
+    font-size: 12px;
+}
+
+#otodoke, #kessai {
+    background-color: white;
+    padding: 20px;
+    width: 48%;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 5px;
+
+    p{
+        font-weight: bold;
+        color: $dark_gray;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    dt {
+        color: $dark_gray;
+        margin-bottom: 5px;
+    }
+    dd {
+       margin-left: 3px; 
+       margin-bottom: 5px;
+    }
+}
+#ototoke {
+    margin-left:20px;
+}
+
+#itemserch {
+    background-color: white;
+    padding: 10px;
+}
+#serch_box {
+        display: flex;
+        justify-content:space-between;
+        background-color:$off_white;
+        margin: 10px;
+        color: $gray;
+        font-style: italic;
+        
+        p{
+            padding: 5px;
+            margin: 0px;
+        }
+        
+        #serch_icon{
+            margin: 5px;
+        }
+        
+        }
+
+#pagelink_title, #category_title, #about_title, #info_title {
+    background-color:$dark-gray;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    
+    p {
+        color: white;
+        margin: 10px;
+    }
+}
+
+#next_icon, #down_icon, .next_icon_gray {
+    margin: 5px;
+}
+#next_icon {
+    margin-top:10px;
+}
+.category {
+        list-style-type: none!important;
+        p{
+            margin: 0px;
+            margin-left: 8px;
+        }
+}
+
+#category_01, #category_02, #category_03, #category_04, #category_05, #category_06{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 3px;
+    background-color: white;
+}
+
+
+
+#about_box, #info_box {
+    background-color: white;
+    padding: 10px;
+}
+.more_btn {
+    text-align: center;
+    margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        margin-bottom: 0px;
+    }
+    #sub_cover_img {
+        height: 120px;
+        margin: 0px;
+        background-size: cover;
+    }
+    #title_newitems, #title_popular, #title_guide{
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    #title_newitems {
+        margin: 30px;
+        margin-bottom: 5px;
+    }
+    
+    #guide_contents {
+        flex-direction: column;
+    }
+    #otodoke, #kessai{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    #itemserch_title{
+        display: none;
+    }
+    .in_box {
+        display: flex;
+    }
+    .in_box_2 {
+        justify-content: column;
+        margin: 5px;
+        margin-top: 0px;
+        p {
+            margin-left: 5px;
+        }
+        .more_btn {
+            text-align: left;
+        }
+    }
+    #about_img, #shopinfo_img {
+        height: 100%;
+        width: 180%;
+    }
+    #pagetop {
+        margin: 0;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .items_imgs  {
+    flex-wrap:wrap;
+    }
+    .item_01, .item_02, .item_03, .item_04, .item_05, .item_06, .item_07, .item_08, .item_09, .item_10, .item_11, .item_12  {
+        width: 43%;
+    }
+    
+}
+
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { 
+    display: block !important; 
+    width: 100%;
+}
+.sp { display: none !important; }
+ 
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media (max-width: 768px) {
+    .pc { display: none !important; }
+    .sp { display: block !important; }
+}
+
+/* productsページ */
+.breadclumbs_list {
+ background-color: $light_gray;   
+ padding: 5px;
+ color: $dark_gray;
+ margin-bottom: 5px;
+ .fa-home{
+  color: $dark_gray;   
+ }
+}
+
+.product {
+    background-color: white;
+    padding: 30px 70px 20px 70px;
+    #product_title {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+    }
+    #product_number {
+        font-weight: normal;
+        color: $gray;
+    }
+    p {
+        margin-bottom: 0px;
+    }
+    
+    hr {
+    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+}
+
+#pro_imgs {
+   display: flex;
+}
+
+#display_img img {
+  width: 100%;
+  margin-right: 10px;
+}
+li {
+  list-style: none;
+  display: inline-block;
+}
+li img {
+  width: 70%;
+  cursor: pointer;
+}
+#list_img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-left: 10px;
+}
+.pro_img {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#title_color {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	border: solid 1px $gray;
+}
+td {
+	border: solid 1px;
+	padding: 0.5em;
+	text-align: center;
+}
+.tr_01, .td_01 {
+    background-color: $off_white;
+}
+
+#product_price {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    
+    #title_price, #value_price {
+        margin: auto;
+        margin-left: 0px;
+    }
+    span {
+        color: #f271c0;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 24px;
+    }
+    p {
+        font-style: italic;
+    }
+}
+
+hr.style_short {
+    width: 300px;
+    margin-left: 0px;
+}
+
+#product_quantity {
+    display: flex;
+}
+
+#title_quantity {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#quantity_box {
+    border: 1px solid;
+    border-color: #E1E1E1;
+    width: 140px;
+    height: 40px;
+    margin: auto;
+    margin-left: 65px;
+    
+}
+
+#pro_exp {
+    margin-bottom: 60px;
+    td {
+        text-align: left;
+        color: $dark_gray;
+        width: 70%;
+    }
+    .td_01 {
+        text-align: center;
+        width: 30%;
+    }
+}
+
+.item_exp {
+    padding-top: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    p{
+        font-size: 18px;
+        color: $dark_gray;
+    }
+    .title_exp {
+        font-size: 18px;
+        color: $dark_gray;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+#title_recent {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+#recent_pro_li {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    width: 100%;
+    p {
+        padding-top: 10px;
+    }
+}
+#recent_pro_01, #recent_pro_02, #recent_pro_03 {
+    background-color: white;
+    margin: 1px;
+    padding: 10px;
+    padding-bottom: 5px;
+    width:29%;
+}
+.flexible_images{
+    max-width: 100%;
+}
+
+/* productsページ(sp) */
+@media (max-width: 768px) {
+ .product {   
+     padding: 10px;   
+ }
+ 
+ #pro_imgs{
+     flex-wrap: wrap;
+ }
+ #list_img {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     margin-top: 10px;
+     margin-bottom: 0px;
+     .pro_img {
+         width: 20%;
+     }
+ }
+    #add_to_cart {
+        text-align: center;
+    }
+    #recent_pro_01, #recent_pro_02, #recent_pro_03 {
+    width:43%;
+    }
+    #title_recent {
+        display: flex;
+        justify-content: center
+    }
+    #title_guide {
+        margin: 10px 0px 10px 0px;
+    }
+}
+
+/* listページ(PC) */
+ #cover_img {
+     margin-top: 5px;
+     margin-bottom: 10px;
+     background-image: url(../images/list/cate_image.jpg);
+     height:16rem;
+ }
+ #pro_list_02 {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     #list_01, #list_02, #list_03, #list_04, #list_05, #list_06, #list_07, #list_08, #list_09{
+         width: 31.1%;
+         background-color: white;
+         padding: 5px;
+         justify-content: space-between;
+         margin-bottom: 3px;
+     }
+     #list_02, #list_05, #list_08 {
+         margin-left: 3px;
+         margin-right: 3px;
+     }
+ }
+ 
+ .move_btns {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     p {
+         margin: 0.5rem;
+     }
+ }
+ #back_btn {
+     border: solid 1px $dark_gray;
+     background-color: $dark_gray;
+     color: white;
+     padding: 5px;
+     text-align: center;
+     width: 12rem;
+     height: 3rem;
+     font-weight: bold;
+ }
+ #next_btn {
+     border: solid 1px $dark_gray;
+     background-color: $dark_gray;
+     color: white;
+     padding: 5px;
+     text-align: center;
+     width: 12rem;
+     height: 3rem;
+     font-weight: bold;
+
+ }
+
+/* listページ(sp) */
+@media  (max-width: 768px) {
+    #cover_img {
+     background-image: url(../images/list/cate_image_sp.jpg);
+     height: 16rem;
+    }    
+    #pro_list_02{
+    #list_01, #list_02, #list_03, #list_04, #list_05, #list_06, #list_07, #list_08, #list_09{
+         width: 45%;
+    }
+    }
+}
